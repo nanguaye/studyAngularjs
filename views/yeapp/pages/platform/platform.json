@@ -1,29 +1,46 @@
 {
   "shopLists": [
     {
-      "shopId":"1000",
+      "shopId": "1000",
       "img": "./asstes/imgs/car01.jpg",
       "shopName": "杭州兰博基尼旗舰店",
-      "shopAddress": "杭州市滨江区科技馆路1043号兰博基尼旗舰店"
-
+      "shopAddress": "杭州市滨江区科技馆路1043号兰博基尼旗舰店",
+      "tel": "13282211111"
     },
     {
-      "shopId":"1001",
+      "shopId": "1001",
       "img": "./asstes/imgs/car02.jpg",
       "shopName": "宾利旗舰店",
-      "shopAddress": "杭州市西湖文一路路23号宾利"
+      "shopAddress": "杭州市西湖文一路路23号宾利",
+      "tel": "13282211111"
     },
     {
-      "shopId":"1002",
+      "shopId": "1002",
       "img": "./asstes/imgs/car03.jpg",
       "shopName": "迈凯伦体验店",
-      "shopAddress": "杭州市西溪湿地迈凯伦体验店"
+      "shopAddress": "杭州市西溪湿地迈凯伦体验店",
+      "tel": "13282211111"
     },
     {
-      "shopId":"1003",
+      "shopId": "1003",
       "img": "./asstes/imgs/food01.jpg",
       "shopName": "好吃的烧烤",
-      "shopAddress": "杭州市下城区长浜路200号好吃的烧烤连锁店"
+      "shopAddress": "杭州市下城区长浜路200号好吃的烧烤连锁店",
+      "tel": "13282211111"
+    },
+    {
+      "shopId": "1004",
+      "img": "./asstes/imgs/food02.jpg",
+      "shopName": "超辣连锁店",
+      "shopAddress": "余杭区超辣连锁店",
+      "tel": "13282211111"
+    },
+    {
+      "shopId": "1005",
+      "img": "./asstes/imgs/food03.jpg",
+      "shopName": "绝味",
+      "shopAddress": "下城区东新店",
+      "tel": "13282211111"
     }
   ]
 }
