@@ -1,0 +1,170 @@
+{
+  "shopName": "绝味",
+  "shopTitle": "绝味真的是非常绝味哦!",
+  "shopAddress": "浙江省杭州市西湖区文三路200号华星时代广场B座4楼",
+  "shopTel": "13292321234",
+  "img": "./asstes/imgs/food01.jpg",
+  "hotProducts": [
+    {
+      "code": "1000100",
+      "name": "鸡翅",
+      "price": 25,
+      "img": "./asstes/imgs/food01.jpg",
+      "stock": "99",
+      "specLists": [
+        {
+          "口味": [
+            {
+              "id": "1",
+              "specName": "口味",
+              "specVal": "麻辣"
+            },
+            {
+              "id": "2",
+              "specName": "口味",
+              "specVal": "重辣"
+            },
+            {
+              "id": "3",
+              "specName": "口味",
+              "specVal": "不辣"
+            }
+          ],
+          "重量": [
+            {
+              "id": "11",
+              "specName": "重量",
+              "specVal": "250g"
+            },
+            {
+              "id": "12",
+              "specName": "重量",
+              "specVal": "500g"
+            },
+            {
+              "id": "13",
+              "specName": "重量",
+              "specVal": "1000g"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "1000101",
+      "name": "毛豆",
+      "price": 10,
+      "unit":"斤",
+      "img": "./asstes/imgs/food04.jpg",
+      "stock": "50",
+      "specLists": [
+        {
+          "口味": [
+            {
+              "id": "1",
+              "specName": "口味",
+              "specVal": "麻辣"
+            },
+            {
+              "id": "2",
+              "specName": "口味",
+              "specVal": "重辣"
+            },
+            {
+              "id": "3",
+              "specName": "口味",
+              "specVal": "不辣"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "1000102",
+      "name": "提拉米苏",
+      "price": 68,
+      "unit":"个",
+      "img": "./asstes/imgs/food05.jpg",
+      "stock": "50",
+      "specLists": [
+        {
+          "口味": [
+            {
+              "id": "1",
+              "specName": "口味",
+              "specVal": "巧克力"
+            },
+            {
+              "id": "2",
+              "specName": "口味",
+              "specVal": "抹茶"
+            },
+            {
+              "id": "3",
+              "specName": "口味",
+              "specVal": "草莓"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "1000103",
+      "name": "好吃的黑森林",
+      "price": 48,
+      "unit":"片",
+      "img": "./asstes/imgs/food06.jpg",
+      "stock": "50",
+      "specLists": [
+        {
+          "口味": [
+            {
+              "id": "1",
+              "specName": "口味",
+              "specVal": "巧克力"
+            },
+            {
+              "id": "2",
+              "specName": "口味",
+              "specVal": "抹茶"
+            },
+            {
+              "id": "3",
+              "specName": "口味",
+              "specVal": "草莓"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "1000104",
+      "name": "好吃的布丁",
+      "price": 18,
+      "unit":"个",
+      "img": "./asstes/imgs/food06.jpg",
+      "stock": "50",
+      "specLists": [
+        {
+          "口味": [
+            {
+              "id": "1",
+              "specName": "口味",
+              "specVal": "巧克力"
+            },
+            {
+              "id": "2",
+              "specName": "口味",
+              "specVal": "抹茶"
+            },
+            {
+              "id": "3",
+              "specName": "口味",
+              "specVal": "草莓"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

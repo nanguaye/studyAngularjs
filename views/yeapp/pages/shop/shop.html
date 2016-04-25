@@ -1,1 +1,34 @@
-<div>shop页面</div>
+<div style="width: 100%" class="shopInf">
+    <img src="{{vm.productLists.img}}" class="shopInfImg">
+    <div class="shopInfName">{{vm.productLists.shopName}}</div>
+    <div class="shopAdd">{{vm.productLists.shopAddress}}</div>
+    <div class="clear shopIn0">
+        <div class="shopInf01 ">
+            <span style="margin-right: 5px">
+                <i class="glyphicon glyphicon-send"></i>
+            </span>
+            导航
+        </div>
+        <div class="shopInf01">
+            <span><i class="glyphicon glyphicon-phone"></i></span>
+            联系我们
+        </div>
+        <div class="shopInf01">
+            <span><i class="glyphicon glyphicon-retweet"></i></span>
+            切换商铺
+        </div>
+    </div>
+    <!--商品列表-->
+    <div class="shopInfProduct">
+        <div class="shopInfProduct01"   ng-repeat=" product in vm.productLists.hotProducts">
+            <img src="{{product.img}}"  class="shopInfProductImg">
+            <div  class="shopInfProductName">{{product.name}}</div>
+            <div class="shopInfProductPrice">
+                <span>售价:</span>
+                <span>{{product.price}}</span>
+                <span  class="clear shopInfProductCart"><i class="glyphicon glyphicon-shopping-cart"></i></span>
+            </div>
+        </div>
+    </div>
+
+</div>
