@@ -4,7 +4,7 @@ myApp.config(function ($stateProvider,$urlRouterProvider) {
         url:'/platform',
         views:{
             '@':{
-                templateUrl:'../views/yeapp/pages/platform/platform.html',
+                templateUrl:'./yeapp/pages/platform/platform.html',
                 controller:'platformCtrl',
                 controllerAs: 'vm'
             }
@@ -16,5 +16,15 @@ myApp.config(function ($stateProvider,$urlRouterProvider) {
         }
         
     })
+        .state('platform.shop',{
+            url:'/shop?shopId',
+            views:{
+                '@':{
+                    templateUrl:'./yeapp/pages/shop/shop.html',
+                    controller:'',
+                    controllerAs:'vm'
+                }
+            }
+        })
     
 });
