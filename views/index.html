@@ -1,17 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="app">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>平台</title>
+    <title>平台-index</title>
     <script src="../js/lib/jquery/dist/jquery.js"></script>
     <script src="../js/lib/angular/angular.js"></script>
+    <script src="../js/lib/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="../js/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="../js/lib/angular-resource/angular-resource.js"></script>
     <link rel="stylesheet" type="text/css" href="../js/lib/bootstrap/dist/css/bootstrap.css">
+
+
+    <script src="yeapp/yeapp.module.js"></script>
+    <script src="yeapp/yeapp.router.js"></script>
+    <link rel="stylesheet/less" type="text/css" href="index.less">
+    <script src="../js/lib/less/dist/less.js" ></script>
+    <script src="yeapp/service/resourcePoolye.js"></script>
+    <script src="yeapp/pages/platform/platformController.js"></script>
 </head>
 <body>
-<div>
-    <button class="btn btn-danger"></button>
-</div>
+<div ui-view=""></div>
 </body>
 </html>
