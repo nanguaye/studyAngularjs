@@ -9,26 +9,31 @@
             </span>
             导航
         </div>
-        <div class="shopInf01">
-            <span><i class="glyphicon glyphicon-phone"></i></span>
-            联系我们
-        </div>
-        <div class="shopInf01">
+        <a href="tel:{{vm.productLists.shopTel}}">
+            <div class="shopInf01">
+                <span><i class="glyphicon glyphicon-phone"></i></span>
+                联系我们
+            </div>
+        </a>
+        <div class="shopInf01" ui-sref="platform">
             <span><i class="glyphicon glyphicon-retweet"></i></span>
             切换商铺
         </div>
     </div>
     <!--商品列表-->
-    <div class="shopInfProduct">
-        <div class="shopInfProduct01"   ng-repeat=" product in vm.productLists.hotProducts">
-            <img src="{{product.img}}"  class="shopInfProductImg">
-            <div  class="shopInfProductName">{{product.name}}</div>
-            <div class="shopInfProductPrice">
-                <span>售价:</span>
-                <span>{{product.price}}</span>
-                <span  class="clear shopInfProductCart"><i class="glyphicon glyphicon-shopping-cart"></i></span>
-            </div>
+    <div class="shopInfProduct clear">
+        <div class="shopInfProduct01" ng-repeat=" product in vm.productLists.hotProducts" style="position: relative"
+        ng-class="{'sale':product.sales,'hot':product.hot}">
+                <img src="{{product.img}}" class="shopInfProductImg">
+                <div class="shopInfProductName">{{product.name}}</div>
+                <div class="shopInfProductPrice">
+                    <span>售价:</span>
+                    <span>{{product.price}}</span>
+                <span class="clear shopInfProductCart" ng-click="vm.addCart(product)"><i
+                        class="glyphicon glyphicon-shopping-cart"></i></span>
+                </div>
         </div>
     </div>
 
 </div>
+<popup></popup>

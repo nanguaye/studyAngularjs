@@ -7,10 +7,12 @@
   "hotProducts": [
     {
       "code": "1000100",
-      "name": "鸡翅",
+      "name": "美味的烤鸡翅",
       "price": 25,
       "img": "./asstes/imgs/food01.jpg",
       "stock": "99",
+      "sales":false,
+      "hot":true,
       "specLists": [
         {
           "口味": [
@@ -52,11 +54,13 @@
     },
     {
       "code": "1000101",
-      "name": "毛豆",
+      "name": "爽口的酱毛豆",
       "price": 10,
       "unit":"斤",
       "img": "./asstes/imgs/food04.jpg",
       "stock": "50",
+      "sales":true,
+      "hot":false,
       "specLists": [
         {
           "口味": [
@@ -86,6 +90,7 @@
       "unit":"个",
       "img": "./asstes/imgs/food05.jpg",
       "stock": "50",
+      "sales":true,
       "specLists": [
         {
           "口味": [
@@ -115,6 +120,7 @@
       "unit":"片",
       "img": "./asstes/imgs/food06.jpg",
       "stock": "50",
+      "sales":false,
       "specLists": [
         {
           "口味": [

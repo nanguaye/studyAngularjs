@@ -1,11 +1,71 @@
-body{
- padding: 10px;
- background-color: #f8f8f8;
+body {
+  background-color: #f8f8f8;
 }
-.clear:after {
- content: "";
- display: block;
- height: 0;
- clear: both;
 
+.clear:after {
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+
+}
+
+//popup指令样式
+.popup {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 12;
+  background-color: #fff;
+  transition: .3s;
+  -webkit-transition: .3s;
+  transform: translateY(100%);
+  -webkit-transform: translateY(100%);
+  &:not(.ng-hide) {
+    -webkit-transform: translateY(0);
+  }
+  .popuphead {
+    text-align: center;
+    line-height: 30px;
+    border-bottom: 1px solid #e5e5e5;
+  }
+  .popupbody {
+    width: 100%;
+    //min-height: 200px;
+    padding: 10px;
+    .popupbodytitle {
+      width: 100%;
+      .popupbodytitle1 {
+        font-weight: bold;
+        font-size: 16px;
+      }
+    }
+    .popupbodyprice {
+      color: #db5252;
+      padding: 10px 0
+    }
+    .popupbodyspec {
+      width: 100%;
+      .popupbodyspec01 {
+        width: 100%;
+        line-height: 40px;
+        .popupbodyspec02 {
+          display: inline-block;
+          background-color: #e5e5e5;
+          padding: 0 10px;
+          margin-right: 10px
+        }
+      }
+    }
+  }
+}
+
+.zzc {
+  background-color: rgba(0, 0, 0, 0.35);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
 }

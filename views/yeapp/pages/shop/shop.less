@@ -1,5 +1,6 @@
 
 .shopInf {
+  padding: 10px;
   .shopInfImg {
     width: 100%;
   }
@@ -41,9 +42,25 @@
         color: #db5252;
         .shopInfProductCart {
           float: right;
-          color: blue
+          color: #007aff
         }
       }
     }
   }
+}
+//特卖
+.sale:after {
+  content:"特卖";
+  position: absolute;
+  width: 20px;
+  background-color: #db3280;
+  top: 10px;
+}
+//热销
+.hot:after{
+  content:"热销";
+  position: absolute;
+  width: 20px;
+  background-color: #db2b12;
+  top: 10px;
 }
