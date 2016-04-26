@@ -27,8 +27,28 @@ myApp.directive('popup', function () {
             });
             //关闭function
             scope.close = function () {
-                scope.show=false;//隐藏弹窗
+                scope.show = false;//隐藏弹窗
             }
         }
+    }
+});
+
+//shop页 轮播图指令 carouselimg
+myApp.directive('swipeimg', function ($timeout) {
+    return {
+        restrict: "E",
+        templateUrl: './yeapp/directive/swipeimg.html',
+        replace: true,
+        link: function (scope) {
+            console.log("------")
+            setTimeout(function () {
+                new Swiper('.swiper-container', {
+                    paginationClickable: true,
+                    autoplay: 2000,
+                    loop: true
+                })
+            })
+        }
+
     }
 });

@@ -1,5 +1,6 @@
+<!--Swiper轮播-->
+<swipeimg></swipeimg>
 <div style="width: 100%" class="shopInf">
-    <img src="{{vm.productLists.img}}" class="shopInfImg">
     <div class="shopInfName">{{vm.productLists.shopName}}</div>
     <div class="shopAdd">{{vm.productLists.shopAddress}}</div>
     <div class="clear shopIn0">
@@ -23,15 +24,15 @@
     <!--商品列表-->
     <div class="shopInfProduct clear">
         <div class="shopInfProduct01" ng-repeat=" product in vm.productLists.hotProducts" style="position: relative"
-        ng-class="{'sale':product.sales,'hot':product.hot}">
-                <img src="{{product.img}}" class="shopInfProductImg">
-                <div class="shopInfProductName">{{product.name}}</div>
-                <div class="shopInfProductPrice">
-                    <span>售价:</span>
-                    <span>{{product.price}}</span>
+             ng-class="{'sale':product.sales,'hot':product.hot}">
+            <img src="{{product.img}}" class="shopInfProductImg">
+            <div class="shopInfProductName">{{product.name}}</div>
+            <div class="shopInfProductPrice">
+                <span>售价:</span>
+                <span>{{product.price}}</span>
                 <span class="clear shopInfProductCart" ng-click="vm.addCart(product)"><i
                         class="glyphicon glyphicon-shopping-cart"></i></span>
-                </div>
+            </div>
         </div>
     </div>
 
