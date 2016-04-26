@@ -21,6 +21,7 @@ myApp.directive('popup', function () {
     return {
         restrict: "E",
         templateUrl: "./yeapp/directive/popup.html",
+        transclude:true,
         link: function (scope, element, attrs, controllers) {
             scope.$on('popup-show', function () {
                 scope.show = true;//显示弹窗
@@ -34,12 +35,11 @@ myApp.directive('popup', function () {
 });
 
 //shop页 轮播图指令 swipeimg  在指令中操作dom  
-myApp.directive('swipeimg', function ($timeout) {
+myApp.directive('swipeimg', function () {
     return {
         restrict: "A",
         replace: true,
         link: function (scope, element) {
-            console.log("------")
             setTimeout(function () {
                 new Swiper('.swiper-container', {
                     paginationClickable: true,

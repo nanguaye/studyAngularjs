@@ -14,7 +14,6 @@
       "img": "./asstes/imgs/food03.jpg"
     }
   ],
-
   "hotProducts": [
     {
       "code": "1000100",
@@ -26,38 +25,38 @@
       "hot": true,
       "specLists": [
         {
-          "口味": [
+          "specName": "口味",
+          "id":"1001",
+          "specValues": [
             {
               "id": "1",
-              "specName": "口味",
               "specVal": "麻辣"
             },
             {
               "id": "2",
-              "specName": "口味",
-              "specVal": "重辣"
+              "specVal": "微甜"
             },
             {
               "id": "3",
-              "specName": "口味",
-              "specVal": "不辣"
+              "specVal": "孜然"
             }
-          ],
-          "重量": [
+          ]
+        },
+        {
+          "specName": "分量",
+          "id":"1002",
+          "specValues": [
             {
               "id": "11",
-              "specName": "重量",
-              "specVal": "250g"
+              "specVal": "小翅"
             },
             {
-              "id": "12",
-              "specName": "重量",
-              "specVal": "500g"
+              "id": "22",
+              "specVal": "中翅"
             },
             {
-              "id": "13",
-              "specName": "重量",
-              "specVal": "1000g"
+              "id": "33",
+              "specVal": "大翅"
             }
           ]
         }
@@ -74,21 +73,16 @@
       "hot": false,
       "specLists": [
         {
-          "口味": [
+          "specName": "口味",
+          "id":"1011",
+          "specValues": [
             {
               "id": "1",
-              "specName": "口味",
               "specVal": "麻辣"
             },
             {
               "id": "2",
-              "specName": "口味",
               "specVal": "重辣"
-            },
-            {
-              "id": "3",
-              "specName": "口味",
-              "specVal": "不辣"
             }
           ]
         }
@@ -104,20 +98,19 @@
       "sales": true,
       "specLists": [
         {
-          "口味": [
+          "specName": "口味",
+          "id":"1021",
+          "specValues": [
             {
               "id": "1",
-              "specName": "口味",
               "specVal": "巧克力"
             },
             {
               "id": "2",
-              "specName": "口味",
               "specVal": "抹茶"
             },
             {
               "id": "3",
-              "specName": "口味",
               "specVal": "草莓"
             }
           ]
@@ -134,7 +127,9 @@
       "sales": false,
       "specLists": [
         {
-          "口味": [
+          "specName": "口味",
+          "id":"1031",
+          "specValues": [
             {
               "id": "1",
               "specName": "口味",
@@ -163,21 +158,23 @@
       "stock": "50",
       "specLists": [
         {
-          "口味": [
+          "specName": "口味",
+          "id":"1041",
+          "specValues": [
             {
               "id": "1",
               "specName": "口味",
-              "specVal": "巧克力"
+              "specVal": "蓝莓味"
             },
             {
               "id": "2",
               "specName": "口味",
-              "specVal": "抹茶"
+              "specVal": "西瓜味"
             },
             {
               "id": "3",
               "specName": "口味",
-              "specVal": "草莓"
+              "specVal": "芒果味"
             }
           ]
         }

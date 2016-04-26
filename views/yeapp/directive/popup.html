@@ -3,32 +3,5 @@
     <div class="popuphead clear">
         <span style="float: right" ng-click="close()">关闭</span>
     </div>
-    <div class="popupbody">
-        <!--title-->
-        <div  class="popupbodytitle">
-            <span class="popupbodytitle1">{{vm.productCart.name}}</span>
-        </div>
-        <!--price-->
-        <div class="popupbodyprice">
-            <span>￥{{vm.productCart.price}}</span>
-            <span ng-if="vm.productCart.unit">/{{vm.productCart.unit}}</span>
-        </div>
-        <!--规格-->
-        <div ng-if="vm.productCart.specLists" class="popupbodyspec">
-            <div ng-repeat="(key,val) in vm.productCart.specLists[0]">
-                <div>{{key}}</div>
-                <div  class="popupbodyspec01" >
-                    <span class="popupbodyspec02" ng-repeat="spec in val" >{{spec.specVal}}</span>
-                </div>
-
-            </div>
-        </div>
-        <!--购买数量-->
-        <div style="width:100%;line-height: 40px">
-            <span>库存:{{vm.productCart.stock}}</span>
-        </div>
-    </div>
-    <div style="width: 100%;text-align: center;padding: 0 10px">
-        <button class="btn btn-danger" style="width: 100%;border-radius: 0">加入购物车</button>
-    </div>
+    <div ng-transclude=""></div>
 </div>
