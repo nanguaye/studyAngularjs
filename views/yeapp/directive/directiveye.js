@@ -33,13 +33,12 @@ myApp.directive('popup', function () {
     }
 });
 
-//shop页 轮播图指令 carouselimg
+//shop页 轮播图指令 swipeimg  在指令中操作dom  
 myApp.directive('swipeimg', function ($timeout) {
     return {
-        restrict: "E",
-        templateUrl: './yeapp/directive/swipeimg.html',
+        restrict: "A",
         replace: true,
-        link: function (scope) {
+        link: function (scope, element) {
             console.log("------")
             setTimeout(function () {
                 new Swiper('.swiper-container', {
