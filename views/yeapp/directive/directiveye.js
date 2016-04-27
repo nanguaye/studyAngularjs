@@ -28,6 +28,7 @@ myApp.directive('popup', function () {
             });
             //关闭function
             scope.close = function () {
+                scope.$emit('popup-close');
                 scope.show = false;//隐藏弹窗
             }
         }

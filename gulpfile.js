@@ -1,6 +1,5 @@
 // 引入 gulp
 var gulp = require('gulp');
-
 // 引入组件
 var ip = require('ip');
 var connect=require('gulp-connect');
@@ -19,3 +18,21 @@ gulp.task('ipServer',function () {
 gulp.task('default', ['ipServer'], function () {
     console.log('启动ipServer服务');
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
