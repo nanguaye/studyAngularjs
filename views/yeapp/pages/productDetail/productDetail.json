@@ -1,0 +1,85 @@
+{
+  "shop": {
+    "shopName": "绝味",
+    "shopTitle": "绝味真的是非常绝味哦!",
+    "shopAddress": "浙江省杭州市西湖区文三路200号华星时代广场B座4楼",
+    "shopTel": "18668002753",
+    "standard": "",
+    "imgs": [
+      {
+        "img": "./asstes/imgs/food01.jpg"
+      },
+      {
+        "img": "./asstes/imgs/food02.jpg"
+      },
+      {
+        "img": "./asstes/imgs/food03.jpg"
+      }
+    ]
+  },
+  "item": {
+    "code": "1000100",
+    "name": "美味的烤鸡翅",
+    "price": 25,
+    "img": "./asstes/imgs/food01.jpg",
+    "stock": "99",
+    "sales": false,
+    "hot": true,
+    "specLists": [
+      {
+        "specName": "口味",
+        "id": "1001",
+        "specValues": [
+          {
+            "id": "11",
+            "specVal": "麻辣"
+          },
+          {
+            "id": "12",
+            "specVal": "微甜"
+          },
+          {
+            "id": "13",
+            "specVal": "孜然"
+          }
+        ]
+      },
+      {
+        "specName": "分量",
+        "id": "1002",
+        "specValues": [
+          {
+            "id": "21",
+            "specVal": "小翅"
+          },
+          {
+            "id": "22",
+            "specVal": "中翅"
+          },
+          {
+            "id": "23",
+            "specVal": "大翅"
+          }
+        ]
+      },
+      {
+        "specName": "酱料",
+        "id": "1003",
+        "specValues": [
+          {
+            "id": "31",
+            "specVal": "番茄酱"
+          },
+          {
+            "id": "32",
+            "specVal": "沙拉酱"
+          },
+          {
+            "id": "33",
+            "specVal": "海鲜酱"
+          }
+        ]
+      }
+    ]
+  }
+}

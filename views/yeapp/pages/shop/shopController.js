@@ -1,12 +1,18 @@
 /**
  * Created by nangua on 16/4/25.
  */
-myApp.controller('shopCtrl', ['$scope', 'productLists', 'alertService', function ($scope, productLists, alertService) {
+myApp.controller('shopCtrl', ['$scope', 'productLists', 'alertService','$state', function ($scope, productLists, alertService,$state) {
     var vm = this;
     vm.productLists = productLists;
-    console.log(vm.productLists)
+    console.log(vm.productLists);
+    
+    //前往当前商品的详情页
+    vm.goDetail=function (product) {
+         $state.go('platform.shop.productDetail',{productId:product.code})
+    };
     //加入购物车
     vm.addCart = function (product) {
+        event.stopPropagation();//阻止父层的冒泡事件;
         console.log('product+++', product);
         vm.productCart = product;
         $scope.$broadcast("popup-show", product);//像指令(也就是子作用域广播事件)

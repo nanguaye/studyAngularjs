@@ -4,7 +4,8 @@
 myApp.factory('resourcePool', function ($resource, $http) {
     var factory = {
         shopListsRes: $resource('./yeapp/pages/platform/platform.json'),
-        productListsRes:$resource('./yeapp/pages/shop/shop.json')
+        productListsRes:$resource('./yeapp/pages/shop/shop.json'),
+        productDetailsRes:$resource('./yeapp/pages/productDetail/productDetail.json')
     };
 
     return factory;

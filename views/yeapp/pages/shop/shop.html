@@ -30,7 +30,7 @@
     <!--商品列表-->
     <div class="shopInfProduct clear">
         <div class="shopInfProduct01" ng-repeat=" product in vm.productLists.hotProducts" style="position: relative"
-             ng-class="{'sale':product.sales,'hot':product.hot}">
+             ng-class="{'sale':product.sales,'hot':product.hot}" ng-click="vm.goDetail(product)">
             <img src="{{product.img}}" class="shopInfProductImg">
             <div class="shopInfProductName">{{product.name}}</div>
             <div class="shopInfProductPrice">
