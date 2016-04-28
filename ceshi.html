@@ -16,19 +16,57 @@
 </body>
 <script>
     var app = angular.module('app', []);
-    app.controller('ctrl1', function () {
-        var a = [1, 2, 3, 4, 5];
-        var b = [2, 4];
-        var c = [];
-        for (var i = 0; i < b.length; i++) {
-             a.forEach(function (value,index) {
-                  if(value===b[i]){
-                      a.splice(index,1)
-                  }
-                 console.log(a)
-             })
+    app.controller('ctrl1', function ($scope,$http,$q) {
+//        var a =1;
+//        function test(){
+//            console.log(a)
+//
+//        }
+//        test();
+//
+//       $http({
+//           method:"GET",
+//           url : 'http://www.youxiaju.com/validate.php?loginuser=lee&loginpass=123456',
+//       }).then(function (data) {
+//           alert("用户名："+ data.user +" 密码："+ data.pass);
+//       }).catch(function () {
+//           alert('fail');
+//       })
+
+       //写一个promise
+        var defer1=$q.defer();
+        var promise1=defer1.promise;
+
+        function demo(name) {
+            if(name==="yechenhao"){
+                defer1.resolve('名字正确')
+            }else{
+                defer1.reject("名字错误")
+            }
+
+            return promise1
         }
-         console.log('+++++++',a)
+
+        demo("yechenhao1").then(function (data) {
+             console.log(data)
+        }).catch(function (data) {
+             console.log(data)
+        });
+
+
+//1111
+//  var a = [1, 2, 3, 4, 5];
+//        var b = [2, 4];
+//        var c = [];
+//        for (var i = 0; i < b.length; i++) {
+//             a.forEach(function (value,index) {
+//                  if(value===b[i]){
+//                      a.splice(index,1)
+//                  }
+//                 console.log(a)
+//             })
+//        }
+//         console.log('+++++++',a)
 // 2222️
 //        var a = [1, 2, 3, 4, 5];
 //        var b = [2, 4];

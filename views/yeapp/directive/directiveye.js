@@ -52,3 +52,11 @@ myApp.directive('swipeimg', function () {
 
     }
 });
+
+//弹出层错误提示 msg
+myApp.directive('msg',function () {
+   return{
+       restrict:"E",
+       templateUrl:"./yeapp/directive/alertService.html"
+   } 
+});

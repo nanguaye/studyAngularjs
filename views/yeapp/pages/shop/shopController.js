@@ -1,7 +1,7 @@
 /**
  * Created by nangua on 16/4/25.
  */
-myApp.controller('shopCtrl', ['$scope', 'productLists', function ($scope, productLists) {
+myApp.controller('shopCtrl', ['$scope', 'productLists', 'alertService', function ($scope, productLists, alertService) {
     var vm = this;
     vm.productLists = productLists;
     console.log(vm.productLists)
@@ -11,11 +11,13 @@ myApp.controller('shopCtrl', ['$scope', 'productLists', function ($scope, produc
         vm.productCart = product;
         $scope.$broadcast("popup-show", product);//像指令(也就是子作用域广播事件)
         vm.specData = [];//初始化选中的规格数组;
-        vm.clearAllSpec();// 清除所有规格的选中状态
+        // vm.clearAllSpec();// 清除所有规格的选中状态
     };
-
+    //加入购物车弹窗关闭
     $scope.$on('popup-close', function () {
         console.log('弹窗关闭 广播事件');
+        vm.specData = [];//初始化选中的规格数组;
+        vm.clearAllSpec();// 清除所有规格的选中状态
     });
 
     //选择规格
@@ -79,15 +81,11 @@ myApp.controller('shopCtrl', ['$scope', 'productLists', function ($scope, produc
     //确认加入购物车
     vm.addCartComfirm = function () {
         //判断规格是否都已经选好
-        console.log('当前已选的规格', vm.specData);
         if (vm.specData.length === vm.productCart.specLists.length) {
             console.log('所有规格都选好了');
         } else {
-              console.log('已选++++',vm.specData)
-            console.log('全部++++',vm.productCart.specLists)
+            alertService.error('请选择规格');
         }
 
     }
-
-
 }]);
