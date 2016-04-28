@@ -29,7 +29,9 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
             resolve: {
                 productLists: function (resourcePool, $stateParams) {
                     var shopId = $stateParams.shopId;
-                    return resourcePool.productListsRes.get({shopId: shopId});
+                    return resourcePool.productListsRes.get({shopId: shopId}).$promise.then(function (value) {
+                        return value
+                    })
                 }
             }
         })
@@ -43,10 +45,21 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
                 }
             },
             //这里可以根据shop页面的传过来的productId去请求该商品的的数据,这里为了方便所以用json模拟数据..见谅
+
             resolve: {
-                productDetails: function ($stateParams,resourcePool) {
-                    var productId = $stateParams.productId; //获取该商品的id
-                    return resourcePool.productDetailsRes.get({productId: productId});
+                productDetails: function ($http, resourcePool) {
+                    //方法1
+                    // return $http({
+                    //         method:"GET",
+                    //         url:"./yeapp/pages/productDetail/productDetail.json"
+                    //     }).then(function (data) {
+                    //         return data.data;
+                    //     });
+                    //方法2 用资源池
+                    return resourcePool.productDetailsRes.get().$promise.then(function (value) {
+                        console.log("value",value)
+                        return value
+                    })
                 }
             }
         })

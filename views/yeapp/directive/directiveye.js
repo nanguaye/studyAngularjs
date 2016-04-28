@@ -38,7 +38,7 @@ myApp.directive('popup', function () {
 //shop页 轮播图指令 swipeimg  在指令中操作dom  
 myApp.directive('swipeimg', function () {
     return {
-        restrict: "A",
+        restrict: "AE",
         replace: true,
         link: function (scope, element) {
             setTimeout(function () {
