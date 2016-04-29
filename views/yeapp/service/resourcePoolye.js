@@ -6,7 +6,7 @@ myApp.factory('resourcePool', function ($resource, $http) {
         shopListsRes: $resource('./yeapp/pages/platform/platform.json'),
         productListsRes:$resource('./yeapp/pages/shop/shop.json'),
         productDetailsRes:$resource('./yeapp/pages/productDetail/productDetail.json'),
-        ye:$resource('./sadasdasdas')
+        userRes:$resource('./yeapp/pages/user/user.json')
     };
 
     return factory;

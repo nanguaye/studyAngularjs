@@ -21,7 +21,7 @@ myApp.directive('popup', function () {
     return {
         restrict: "E",
         templateUrl: "./yeapp/directive/popup.html",
-        transclude:true,
+        transclude: true,
         link: function (scope, element, attrs, controllers) {
             scope.$on('popup-show', function () {
                 scope.show = true;//显示弹窗
@@ -54,31 +54,35 @@ myApp.directive('swipeimg', function () {
 });
 
 //弹出层错误提示 msg
-myApp.directive('msg',function () {
-   return{
-       restrict:"E",
-       templateUrl:"./yeapp/directive/alertService.html"
-   } 
+myApp.directive('msg', function () {
+    return {
+        restrict: "E",
+        templateUrl: "./yeapp/directive/alertService.html"
+    }
 });
 
 //价格 price指令
-myApp.directive('price',function () {
-    return{
-        restrict:"E",
-        template:"<span style='color: #db5252' ng-transclude=''></span>",
-        transclude:true
+myApp.directive('price', function () {
+    return {
+        restrict: "E",
+        template: "<span style='color: #db5252' ng-transclude=''></span>",
+        transclude: true
     }
 });
 
 //底部导航栏
-angular.module('app').directive('bottomnav',function ($stateParams,$state) {
-    return{
-        restrict:"E",
-        templateUrl:"./yeapp/directive/bottomnav.html",
-        replace:true,
-        link:function (scope,element,attrs,cotroller) {
-            scope.goShop=function () {
-                  $state.go('platform.shop',{shopId:$stateParams.shopId})
+angular.module('app').directive('bottomnav', function ($stateParams, $state) {
+    return {
+        restrict: "E",
+        templateUrl: "./yeapp/directive/bottomnav.html",
+        replace: true,
+        link: function (scope, element, attrs, cotroller) {
+            scope.goShop = function () {
+                $state.go('platform.shop', {shopId: $stateParams.shopId})
+            };
+            //去个人中心
+            scope.goUser = function () {
+                $state.go('platform.user',{shopId: $stateParams.shopId})
             }
         }
     }

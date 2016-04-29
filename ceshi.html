@@ -11,12 +11,19 @@
 </head>
 <body>
 <div ng-controller="ctrl1">
-
+    <div style="width: 300px;height: 2000px;background-color: red" ng-click="demo()"></div>
+  <div style="position: fixed;right: 0;left: 0;bottom: 0;height: 50px;background-color: #e5e5e5;width: 100%
+    pointer-events: auto;text-align: center">
+      <div style="width: 30px;margin-left: 50px">首页</div>
+  </div>
 </div>
 </body>
 <script>
     var app = angular.module('app', []);
     app.controller('ctrl1', function ($scope,$http,$q) {
+          $scope.demo=function () {
+              alert('1111111')
+          }
 //        var a =1;
 //        function test(){
 //            console.log(a)
