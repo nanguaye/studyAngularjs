@@ -10,15 +10,25 @@ html, body {
 //底部导航栏
 .bottomnavigation {
   position: fixed;
+  left: 0;
+  right: 0;
   bottom: 0;
   z-index: 10;
   height: 50px;
   width: 100%;
-  background-color: white;
+  background-color: #f5f5f5;
   display: flex;
   display: -webkit-flex;
   align-items: center;
   -webkit-align-items: center;
+  .bottomnavigation01 {
+    width: 25%;
+    float: left;
+    text-align: center;
+    .font12 {
+      font-size: 12px;
+    }
+  }
 }
 
 .clear:after {

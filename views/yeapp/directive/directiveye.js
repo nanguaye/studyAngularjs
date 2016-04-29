@@ -71,9 +71,15 @@ myApp.directive('price',function () {
 });
 
 //底部导航栏
-angular.module('app').directive('bottomnav',function () {
+angular.module('app').directive('bottomnav',function ($stateParams,$state) {
     return{
         restrict:"E",
-        templateUrl:"./yeapp/directive/bottomnav.html"
+        templateUrl:"./yeapp/directive/bottomnav.html",
+        replace:true,
+        link:function (scope,element,attrs,cotroller) {
+            scope.goShop=function () {
+                  $state.go('platform.shop',{shopId:$stateParams.shopId})
+            }
+        }
     }
 });
