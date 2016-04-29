@@ -2,6 +2,10 @@
  * Created by nangua on 16/4/25.
  */
 myApp.controller('shopCtrl', ['$scope', 'productLists', 'alertService','$state', function ($scope, productLists, alertService,$state) {
+
+    //第一次进入这个页面的时候 置顶
+    $(window).scrollTop(0);
+
     var vm = this;
     vm.productLists = productLists;
     console.log(vm.productLists);

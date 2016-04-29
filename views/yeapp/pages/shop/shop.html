@@ -7,8 +7,8 @@
     </div>
 </div>
 <div style="width: 100%" class="shopInf">
-    <div class="shopInfName">{{vm.productLists.shopName}}</div>
-    <div class="shopAdd">{{vm.productLists.shopAddress}}</div>
+    <div class="shopInfName" ng-bind="vm.productLists.shopName"></div>
+    <div class="shopAdd" ng-bind="vm.productLists.shopAddress"></div>
     <div class="clear shopIn0">
         <div class="shopInf01 ">
             <span style="margin-right: 5px">
@@ -46,7 +46,7 @@
 <popup>
     <div class="popupbody">
         <!--title-->
-        <div  class="popupbodytitle">
+        <div class="popupbodytitle">
             <span class="popupbodytitle1">{{vm.productCart.name}}</span>
         </div>
         <!--price-->
@@ -58,9 +58,9 @@
         <div ng-if="vm.productCart.specLists" class="popupbodyspec">
             <div ng-repeat="spec in vm.productCart.specLists">
                 <div>{{spec.specName}}</div>
-                <div  class="popupbodyspec01" >
+                <div class="popupbodyspec01">
                     <span class="popupbodyspec02" ng-class="{'slectbccolor':specValue.checked}"
-                          ng-repeat="specValue in spec.specValues" ng-click="vm.selectSku(spec,specValue)" >{{specValue.specVal}}</span>
+                          ng-repeat="specValue in spec.specValues" ng-click="vm.selectSku(spec,specValue)">{{specValue.specVal}}</span>
                 </div>
 
             </div>
@@ -71,6 +71,9 @@
         </div>
     </div>
     <div style="width: 100%;text-align: center;padding: 0 10px">
-        <button ng-click="vm.addCartComfirm()" class="btn btn-danger" style="width: 100%;border-radius: 0">加入购物车</button>
+        <button ng-click="vm.addCartComfirm()" class="btn btn-danger" style="width: 100%;border-radius: 0">加入购物车
+        </button>
     </div>
 </popup>
+
+<bottomnav></bottomnav>

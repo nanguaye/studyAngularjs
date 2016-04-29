@@ -5,15 +5,20 @@
     "shopAddress": "浙江省杭州市西湖区文三路200号华星时代广场B座4楼",
     "shopTel": "18668002753",
     "standard": "",
+    "price":"25",
+    "unit":"斤",
     "imgs": [
       {
-        "img": "./asstes/imgs/food01.jpg"
+        "img": "./asstes/imgs/juewei01.jpg"
       },
       {
-        "img": "./asstes/imgs/food02.jpg"
+        "img": "./asstes/imgs/juewei02.jpg"
       },
       {
-        "img": "./asstes/imgs/food03.jpg"
+        "img": "./asstes/imgs/juewei03.jpg"
+      },
+      {
+        "img": "./asstes/imgs/juewei04.jpg"
       }
     ]
   },

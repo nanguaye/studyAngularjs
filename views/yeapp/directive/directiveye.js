@@ -60,3 +60,20 @@ myApp.directive('msg',function () {
        templateUrl:"./yeapp/directive/alertService.html"
    } 
 });
+
+//价格 price指令
+myApp.directive('price',function () {
+    return{
+        restrict:"E",
+        template:"<span style='color: #db5252' ng-transclude=''></span>",
+        transclude:true
+    }
+});
+
+//底部导航栏
+angular.module('app').directive('bottomnav',function () {
+    return{
+        restrict:"E",
+        templateUrl:"./yeapp/directive/bottomnav.html"
+    }
+});

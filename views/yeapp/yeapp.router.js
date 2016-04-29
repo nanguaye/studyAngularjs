@@ -59,7 +59,10 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
                     return resourcePool.productDetailsRes.get().$promise.then(function (value) {
                         console.log("value",value)
                         return value
+                    }).catch(function () {
+                         console.log("error")
                     })
+
                 }
             }
         })
