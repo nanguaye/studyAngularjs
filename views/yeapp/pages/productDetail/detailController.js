@@ -7,7 +7,7 @@ myApp.controller('detailCtrl', ['resourcePool', '$stateParams', 'productDetails'
     console.log('+++++', productDetails)
     vm.productShop = productDetails.shop;
     vm.productItem = productDetails.item;
-
+     console.log(1)
     vm.getLocation = function () {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function (success) {
