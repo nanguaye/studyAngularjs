@@ -1,7 +1,7 @@
 /**
  * Created by nangua on 16/4/25.
  */
-myApp.controller('shopCtrl', ['$scope', 'productLists', 'alertService','$state', function ($scope, productLists, alertService,$state) {
+myApp.controller('shopCtrl', ['$scope', 'productLists', 'alertService','$state','$timeout', function ($scope, productLists, alertService,$state,$timeout) {
 
     //第一次进入这个页面的时候 置顶
     $(window).scrollTop(0);
@@ -9,7 +9,25 @@ myApp.controller('shopCtrl', ['$scope', 'productLists', 'alertService','$state',
     var vm = this;
     vm.productLists = productLists;
     console.log(vm.productLists);
-    
+    //打开ewm弹窗
+    vm.openEwm=function () {
+        vm.ewmShow=true;
+        $timeout(function () {
+            vm.qrcode = new QRCode('qrcode', {
+                text: 'your content',
+                width: 180,
+                height: 180,
+                colorDark: '#000000',
+                colorLight: '#ffffff',
+                correctLevel: QRCode.CorrectLevel.H
+            });
+        })
+
+    }
+    //关闭二维码弹窗
+    vm.closeEwm=function () {
+         vm.ewmShow=false;
+    }
     //前往当前商品的详情页
     vm.goDetail=function (product) {
          $state.go('platform.shop.productDetail',{productId:product.code})

@@ -10,7 +10,7 @@
     <div class="shopInfName" ng-bind="vm.productLists.shopName"></div>
     <div class="shopAdd" ng-bind="vm.productLists.shopAddress"></div>
     <div class="clear shopIn0">
-        <div class="shopInf01 ">
+        <div class="shopInf01 " ng-click="vm.openEwm()">
             <span style="margin-right: 5px">
                 <i class="glyphicon glyphicon-send"></i>
             </span>
@@ -75,5 +75,13 @@
         </button>
     </div>
 </popup>
+<!--二维码弹窗-->
+<div class="zzc mui-flex" ng-click="vm.closeEwm()" ng-if="vm.ewmShow">
+    <div id="qrcode" >
+
+    </div>
+</div>
+
+
 <!--底部导航栏-->
 <bottomnav></bottomnav>
