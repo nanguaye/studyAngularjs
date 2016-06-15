@@ -2,7 +2,7 @@
 <div class="swiper-container" swipeimg="">
     <div class="swiper-wrapper">
         <div class="swiper-slide" ng-repeat="img in vm.productShop.imgs">
-            <img src="{{img.img}}" style="width: 100%">
+            <img ng-src="{{img.img}}" style="width: 100%">
         </div>
     </div>
 </div>
@@ -14,4 +14,12 @@
     </div>
     <div>{{vm.productShop.shopAddress}}</div>
     <div>{{vm.productShop.shopTel}}</div>
+</div>
+
+<div>导航</div>
+<div style="width: 100%;position: relative" class="clearfix">
+    <div class="yeslide"  ng-style="{ transform: 'translateX(' + vm.tabIndex * 100 + '%)' }"></div>
+    <div style="float: left;width: 33.3%;text-align: center" ng-click="vm.tabClick(1)">1</div>
+    <div style="float: left;width: 33.3%;text-align: center" ng-click="vm.tabClick(2)">2</div>
+    <div style="float: left;width: 33.3%;text-align: center" ng-click="vm.tabClick(3)">3</div>
 </div>
