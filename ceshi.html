@@ -1,107 +1,36 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="app">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>测试demo</title>
-    <script src="js/lib/jquery/dist/jquery.js"></script>
-    <script src="js/lib/angular/angular.js"></script>
-    <script src="js/lib/Swiper-3.3.1/dist/js/swiper.js"></script>
-    <link rel="stylesheet" href="js/lib/Swiper-3.3.1/dist/css/swiper.css">
-</head>
-<body>
-<div ng-controller="ctrl1">
-    <div style="width: 300px;height: 2000px;background-color: red" ng-click="demo()"></div>
-  <div style="position: fixed;right: 0;left: 0;bottom: 0;height: 50px;background-color: #e5e5e5;width: 100%
-    pointer-events: auto;text-align: center">
-      <div style="width: 30px;margin-left: 50px">首页</div>
-  </div>
-</div>
-</body>
-<script>
-    var app = angular.module('app', []);
-    app.controller('ctrl1', function ($scope,$http,$q) {
-          $scope.demo=function () {
-              alert('1111111')
-          }
-//        var a =1;
-//        function test(){
-//            console.log(a)
-//
-//        }
-//        test();
-//
-//       $http({
-//           method:"GET",
-//           url : 'http://www.youxiaju.com/validate.php?loginuser=lee&loginpass=123456',
-//       }).then(function (data) {
-//           alert("用户名："+ data.user +" 密码："+ data.pass);
-//       }).catch(function () {
-//           alert('fail');
-//       })
-
-       //写一个promise
-        var defer1=$q.defer();
-        var promise1=defer1.promise;
-
-        function demo(name) {
-            if(name==="yechenhao"){
-                defer1.resolve('名字正确')
-            }else{
-                defer1.reject("名字错误")
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1.0,user-scalable-no;minimum-scale=1.0">
+    <title>思涂客 Stooges</title>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular-animate.js"></script>
+    <script>
+        angular.module('app',['ngAnimate']).
+        controller('ctrl', ['$scope', function ($scope) {
+            $scope.showButton = function () {
+                $scope.expression = true;
             }
-
-            return promise1
-        }
-
-        demo("yechenhao1").then(function (data) {
-             console.log(data)
-        }).catch(function (data) {
-             console.log(data)
-        });
-
-
-//1111
-//  var a = [1, 2, 3, 4, 5];
-//        var b = [2, 4];
-//        var c = [];
-//        for (var i = 0; i < b.length; i++) {
-//             a.forEach(function (value,index) {
-//                  if(value===b[i]){
-//                      a.splice(index,1)
-//                  }
-//                 console.log(a)
-//             })
-//        }
-//         console.log('+++++++',a)
-// 2222️
-//        var a = [1, 2, 3, 4, 5];
-//        var b = [2, 4];
-//         console.log('aaaa',a)
-//        var c = a.join("|");  //把数组转换成字符串
-//
-//        console.log(c)
-//        for (var i = 0, len = b.length; i < len; i++) {
-//            var _a_ = b[i] + '|';
-//            c = c.replace(_a_, "");
-//             console.log('cccc',c)
-//        }
-//        var e = c.split('|');
-//        console.log('+++++++', e)
-
-//33333
-//        var oldArray = [1, 2, 3, 4, 5];
-//        var newArray = [2, 4];
-//        var filteredArray = oldArray.filter(function (item, index, array) {
-//            console.log(item)
-//            var result = newArray.some(function (value, key, arr) {
-//                console.log('++', value);
-//                return value === item;
-//            });
-//             console.log('result',!result)
-//            return !result;
-//        });
-//        console.log(filteredArray);
-    })
-</script>
+            $scope.hideButton = function () {
+                $scope.expression = false;
+            }
+        }])
+    </script>
+    <style>
+        #animate{ background-color:red;-webkit-transition:all linear 2s; transition:all linear 2s; opacity:1;}
+        #animate.ng-hide{ opacity:0;}
+        /*一下会慢慢解释*/
+        #animate.ng-hide { }
+        #animate.ng-hide-add { }
+        #animate.ng-hide-add.ng-hide-add-active { }
+        #animate.ng-hide-remove { }
+        #animate.ng-hide-remove.ng-hide-remove-active {  }
+    </style>
+</head>
+<body ng-app="app" ng-controller="ctrl">
+<button ng-click="showButton()">show</button>
+<button ng-click="hideButton()">hide</button>
+<div id="animate" ng-show="expression">"思涂客"</div>
+</body>
 </html>

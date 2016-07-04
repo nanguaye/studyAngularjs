@@ -15,5 +15,5 @@ myApp.controller('detailCtrl', ['resourcePool', '$stateParams', 'productDetails'
         } else if (num === 3) {
             vm.tabIndex = 2
         }
-    }
+    };
 }]);

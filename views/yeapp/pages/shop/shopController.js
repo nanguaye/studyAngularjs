@@ -1,7 +1,26 @@
 /**
  * Created by nangua on 16/4/25.
  */
-myApp.controller('shopCtrl', ['$scope', 'productLists', 'alertService','$state','$timeout', function ($scope, productLists, alertService,$state,$timeout) {
+myApp.controller('shopCtrl', ['$scope', 'productLists', 'alertService', '$state', '$timeout', function ($scope, productLists, alertService, $state, $timeout) {
+
+
+/*    if (window.navigator.onLine == true) {
+        console.log('+++++')
+        alert("已连接");
+    } else {
+        alert('未连接')
+    }*/
+/*    $.ajaxSetup({
+        timeout: 1, // 1秒超时
+        error: function(request, status, maybe_an_exception_object) {
+            if(status == 'timeout'){
+                alert("网断了");
+            }else {
+                console.log('wu!!')
+            }
+        }
+    });*/
+
 
     //第一次进入这个页面的时候 置顶
     $(window).scrollTop(0);
@@ -10,8 +29,8 @@ myApp.controller('shopCtrl', ['$scope', 'productLists', 'alertService','$state',
     vm.productLists = productLists;
     console.log(vm.productLists);
     //打开ewm弹窗
-    vm.openEwm=function () {
-        vm.ewmShow=true;
+    vm.openEwm = function () {
+        vm.ewmShow = true;
         $timeout(function () {
             vm.qrcode = new QRCode('qrcode', {
                 text: 'your content',
@@ -25,12 +44,12 @@ myApp.controller('shopCtrl', ['$scope', 'productLists', 'alertService','$state',
 
     }
     //关闭二维码弹窗
-    vm.closeEwm=function () {
-         vm.ewmShow=false;
+    vm.closeEwm = function () {
+        vm.ewmShow = false;
     }
     //前往当前商品的详情页
-    vm.goDetail=function (product) {
-         $state.go('platform.shop.productDetail',{productId:product.code})
+    vm.goDetail = function (product) {
+        $state.go('platform.shop.productDetail', { productId: product.code })
     };
     //加入购物车
     vm.addCart = function (product) {
