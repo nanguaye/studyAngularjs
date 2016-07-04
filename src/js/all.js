@@ -185,7 +185,7 @@ myApp.directive('price', function () {
 });
 
 //底部导航栏
-angular.module('app').directive('bottomnav', function ($stateParams, $state) {
+myApp.directive('bottomnav', function ($stateParams, $state) {
     return {
         restrict: "E",
         templateUrl: "./yeapp/directive/bottomnav.html",
