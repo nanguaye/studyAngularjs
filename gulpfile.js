@@ -8,16 +8,8 @@ var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 var browserSync = require('browser-sync').create();
+var path = require('path')
 
-/*var addr = ip.address();  //ip地址
- gulp.task('ipServer', function () {
- console.log('启动ipServer服务');
- connect.server({
- host: addr,
- root: './',
- port: 1030
- })
- });*/
 // 编译less
 gulp.task('test-less', function () {
     console.log('启动test-less服务')
@@ -36,14 +28,8 @@ gulp.task('script', function () {
         .pipe(gulp.dest('./src/js'));//然后重命名后的all.min.js也输出到dist文件夹下
 });
 gulp.task('browser-sync', function () {
-/*    var files = [
-        './views/index.html',
-        './views/index.less',
-        './views/assets/imgs/!**!/!*.png',
-        './js/!**!/!*.js'
-    ];*/
     console.log('启动browser-sync服务');
-    browserSync.init( {
+    var files = {
         server: {
             baseDir: "./"
         },
@@ -51,10 +37,27 @@ gulp.task('browser-sync', function () {
         open: 'external',  // 打开外部URL -必须在网上
         port: 1030,  // 端口号
         startPath: "/views/index.html" // 启动的时候 打开 views/index.html
-    });
+    };
+    browserSync.init(files);
 });
 
-gulp.task('default', ['test-less', 'script','browser-sync'], function () {
+
+gulp.task('reload', function () {
+    console.log('触发reload服务')
+    browserSync.reload(); // 刷新浏览器
+});
+gulp.task('watch', function () {
+    console.log('触发watch服务')
+    var pjs = path.join(__dirname, './views/**/*.js');
+    var pless = path.join(__dirname, './views/**/*.less');
+    var phtml = path.join(__dirname, './views/**/*.html');
+    gulp.watch(pjs, ['script', 'reload']); //监听 views文件夹下的的js文件,只要有变化 就执行script 然后刷新浏览器
+    gulp.watch(pless, ['test-less', 'reload']);
+    gulp.watch(phtml, ['reload']);
+});
+
+// 执行
+gulp.task('default', ['test-less', 'script', 'browser-sync', 'watch'], function () {
     console.log("启动")
 });
 

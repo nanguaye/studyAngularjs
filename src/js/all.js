@@ -266,8 +266,10 @@ myApp.controller('platformCtrl',['$scope','shopLists','$state',function ($scope,
  * Created by nangua on 16/4/28.
  */
 myApp.controller('detailCtrl', ['resourcePool', '$stateParams', 'productDetails', function (resourcePool, $stateParams, productDetails) {
-
     var vm = this;
+    vm.yeData = "[{startWeekDay:'1',endWeekDay:'4'}]";
+    console.log('123',vm.yeData)
+    
     console.log('+++++', productDetails)
     vm.productShop = productDetails.shop;
     vm.productItem = productDetails.item;
@@ -285,25 +287,6 @@ myApp.controller('detailCtrl', ['resourcePool', '$stateParams', 'productDetails'
  * Created by nangua on 16/4/25.
  */
 myApp.controller('shopCtrl', ['$scope', 'productLists', 'alertService', '$state', '$timeout', function ($scope, productLists, alertService, $state, $timeout) {
-
-
-/*    if (window.navigator.onLine == true) {
-        console.log('+++++')
-        alert("已连接");
-    } else {
-        alert('未连接')
-    }*/
-/*    $.ajaxSetup({
-        timeout: 1, // 1秒超时
-        error: function(request, status, maybe_an_exception_object) {
-            if(status == 'timeout'){
-                alert("网断了");
-            }else {
-                console.log('wu!!')
-            }
-        }
-    });*/
-
 
     //第一次进入这个页面的时候 置顶
     $(window).scrollTop(0);
