@@ -2,7 +2,7 @@
  * Created by nangua on 16/4/25.
  */
 myApp.controller('shopCtrl', ['$scope', 'productLists', 'alertService', '$state', '$timeout', function ($scope, productLists, alertService, $state, $timeout) {
-
+    
     //第一次进入这个页面的时候 置顶
     $(window).scrollTop(0);
 

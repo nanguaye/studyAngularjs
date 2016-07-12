@@ -50,7 +50,7 @@ gulp.task('watch', function () {
     console.log('触发watch服务');
     // __dirname 代表当前文件夹
     // path.join ()  进入到当前文件夹 然后当前文件夹下的views文件夹 下面的所有js文件
-    var pjs = path.join(__dirname, './viwews/**/*.js');
+    var pjs = path.join(__dirname, './views/**/*.js');
     var pless = path.join(__dirname, './views/**/*.less');
     var phtml = path.join(__dirname, './views/**/*.html');
     gulp.watch(pjs, ['script', 'reload']); //监听 views文件夹下的的js文件,只要有变化 就执行script 然后刷新浏览器

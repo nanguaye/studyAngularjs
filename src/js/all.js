@@ -268,8 +268,8 @@ myApp.controller('platformCtrl',['$scope','shopLists','$state',function ($scope,
 myApp.controller('detailCtrl', ['resourcePool', '$stateParams', 'productDetails', function (resourcePool, $stateParams, productDetails) {
     var vm = this;
     vm.yeData = "[{startWeekDay:'1',endWeekDay:'4'}]";
-    console.log('123',vm.yeData)
-    
+    console.log('123', vm.yeData)
+
     console.log('+++++', productDetails)
     vm.productShop = productDetails.shop;
     vm.productItem = productDetails.item;
@@ -287,7 +287,7 @@ myApp.controller('detailCtrl', ['resourcePool', '$stateParams', 'productDetails'
  * Created by nangua on 16/4/25.
  */
 myApp.controller('shopCtrl', ['$scope', 'productLists', 'alertService', '$state', '$timeout', function ($scope, productLists, alertService, $state, $timeout) {
-
+    
     //第一次进入这个页面的时候 置顶
     $(window).scrollTop(0);
 
