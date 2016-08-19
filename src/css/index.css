@@ -397,8 +397,8 @@ body {
   background-color: #db5252 !important;
 }
 #qrcode {
-  height: 180px;
-  width: 180px;
+  height: 160px;
+  width: 160px;
   background-color: white;
   z-index: 100;
 }

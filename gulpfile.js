@@ -9,6 +9,12 @@ var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 var browserSync = require('browser-sync').create();
 var path = require('path')
+var url = require('url')
+// 中间件 代理 将/api开头的请求代理到proxyOptions上去。
+var proxy = require('proxy-middleware');
+var proxyOptions = url.parse('http://192.168.146.43:8088/');
+proxyOptions.route = '/api';
+console.log('proxy',proxy)
 
 // 编译less
 gulp.task('test-less', function () {
@@ -27,21 +33,30 @@ gulp.task('script', function () {
         .pipe(uglify())
         .pipe(gulp.dest('./src/js'));//然后重命名后的all.min.js也输出到dist文件夹下
 });
+
+// ...
+
 gulp.task('browser-sync', function () {
     console.log('启动browser-sync服务');
+
     var files = {
         server: {
             baseDir: "./"
         },
-        /*server: './',  //这个服务启动在根目录!(这样 根目录下的东西我们都能调用)ps:也可以上面那样写*/
+        // server: './',  //这个服务启动在根目录!(这样 根目录下的东西我们都能调用)ps:也可以上面那样写
         open: 'external',  // 打开外部URL -必须在网上
         port: 1030,  // 端口号
-        startPath: "/views/index.html" // 启动的时候 打开 views/index.html
+        // index:'/views/index.html',
+        startPath: "/views/index.html", // 启动的时候 打开 views/index.html
+        //使用本地主机地址与端口
+        // proxy: "localhost:8088"
+        // 中间件 当以/api开头的请求 代理到8088端口
+        middleware: [
+            proxy(proxyOptions)
+        ]
     };
     browserSync.init(files);
 });
-
-
 gulp.task('reload', function () {
     console.log('触发reload服务');
     browserSync.reload(); // 刷新浏览器
@@ -62,21 +77,3 @@ gulp.task('watch', function () {
 gulp.task('default', ['test-less', 'script', 'browser-sync', 'watch'], function () {
     console.log("启动")
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

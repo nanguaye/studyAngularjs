@@ -80,12 +80,12 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
             //去请求该shop下 个人中心的信息,(参数 shopId),这里我们只需要去请求这个接口即可!后端会去从cookies里判断是否登录
             //登录的情况下,那么会把该shop下 会员信息返回给我们 否则直接返回个空值 或者 erro也可以
             resolve: {
-                userInf: function (resourcePool,$stateParams,$state) {
+                userInf: function (resourcePool, $stateParams, $state) {
                     return resourcePool.userRes.get().$promise.then(function (res) {
                         console.log('res', res);
                         if (res.state === "error") {
                             console.log('请登录');
-                            $state.go('platform.login',{shopId:$stateParams.shopId})
+                            $state.go('platform.login', {shopId: $stateParams.shopId})
                         }
                         return res;
                     })
@@ -246,6 +246,26 @@ myApp.factory('resourcePool', function ($resource, $http) {
 
     return factory;
 });
+"use strict";
+myApp.controller('platformCtrl',['$scope','shopLists','$state','$http',function ($scope,shopLists,$state,$http) {
+     var vm=this;
+     vm.shopLists=shopLists.shopLists
+     //goShop 前往商铺页面
+     vm.goShop=function (shopList) {
+          $state.go('platform.shop',{shopId:shopList.shopId})
+     }
+     $http({
+          url:'http://192.168.146.43:1030/api',
+          method:'GET',
+          params:{
+               'type':'platform'
+          }
+     }).success(function(data,header,config,status){
+//响应成功
+     }).error(function(data,header,config,status){
+//处理响应失败
+     });
+}]);
 /**
  * Created by nangua on 16/4/29.
  */
@@ -253,15 +273,6 @@ myApp.controller('loginCtrl',function () {
     
 });
 
-"use strict";
-myApp.controller('platformCtrl',['$scope','shopLists','$state',function ($scope,shopLists,$state) {
-     var vm=this;
-     vm.shopLists=shopLists.shopLists
-     //goShop 前往商铺页面
-     vm.goShop=function (shopList) {
-          $state.go('platform.shop',{shopId:shopList.shopId})
-     }
-}]);
 /**
  * Created by nangua on 16/4/28.
  */
@@ -300,8 +311,8 @@ myApp.controller('shopCtrl', ['$scope', 'productLists', 'alertService', '$state'
         $timeout(function () {
             vm.qrcode = new QRCode('qrcode', {
                 text: 'your content',
-                width: 180,
-                height: 180,
+                width: 160,
+                height: 160,
                 colorDark: '#000000',
                 colorLight: '#ffffff',
                 correctLevel: QRCode.CorrectLevel.H

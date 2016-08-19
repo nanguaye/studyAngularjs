@@ -15,8 +15,8 @@ myApp.controller('shopCtrl', ['$scope', 'productLists', 'alertService', '$state'
         $timeout(function () {
             vm.qrcode = new QRCode('qrcode', {
                 text: 'your content',
-                width: 180,
-                height: 180,
+                width: 160,
+                height: 160,
                 colorDark: '#000000',
                 colorLight: '#ffffff',
                 correctLevel: QRCode.CorrectLevel.H

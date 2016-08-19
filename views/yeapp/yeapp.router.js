@@ -79,12 +79,12 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
             //去请求该shop下 个人中心的信息,(参数 shopId),这里我们只需要去请求这个接口即可!后端会去从cookies里判断是否登录
             //登录的情况下,那么会把该shop下 会员信息返回给我们 否则直接返回个空值 或者 erro也可以
             resolve: {
-                userInf: function (resourcePool,$stateParams,$state) {
+                userInf: function (resourcePool, $stateParams, $state) {
                     return resourcePool.userRes.get().$promise.then(function (res) {
                         console.log('res', res);
                         if (res.state === "error") {
                             console.log('请登录');
-                            $state.go('platform.login',{shopId:$stateParams.shopId})
+                            $state.go('platform.login', {shopId: $stateParams.shopId})
                         }
                         return res;
                     })
