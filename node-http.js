@@ -4,16 +4,24 @@
 
 var http = require('http')
 var url = require('url')
+// 引入首页的json
+var platformJSON = require('./views/api/platform.json')
+// 模拟一个数据对象
+var _data = {platform: platformJSON}
 
-http.createServer(function (request,response) {
-    var _url = url.parse(request.url,true)
+
+http.createServer(function (request, response) {
+    var _url = url.parse(request.url, true)
     var _paramName = _url.query['type']
-        if (_paramName === 'platform') {
+
+    // 当参数type 参数存在的时候.
+    if (_paramName) {
         response.writeHead(200, {'Content-Type': 'text/plain;charset=utf-8'});
-        console.log('参数正确')
-        // response.write(JSON.stringify('success'))
-        response.write('success!!ok')
-    }else {
+        console.log('type参数:',_paramName)
+        response.write(JSON.stringify(_data[_paramName]))
+        console.log('success!!')
+
+    } else {
         response.writeHead(400, {'Content-Type': 'text/plain;charset=utf-8'});
         console.log('参数错误')
         // response.write(JSON.stringify('error'))

@@ -10,8 +10,18 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
                 }
             },
             resolve: {
-                shopLists: function (resourcePool) {
-                    return resourcePool.shopListsRes.get({})
+                shopLists: function ($http) {
+                  return  $http({
+                        url:'http://192.168.144.211:1030/api/platform',
+                        method:'GET',
+                        params:{
+                            'type':'platform'
+                        }
+                    }).success(function(data,header,config,status){
+                        
+                    }).error(function(data,header,config,status){
+                    });
+                    // return resourcePool.shopListsRes.get({})
                 }
             }
 

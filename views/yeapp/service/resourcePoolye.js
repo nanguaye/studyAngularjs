@@ -3,10 +3,10 @@
  */
 myApp.factory('resourcePool', function ($resource, $http) {
     var factory = {
-        shopListsRes: $resource('./yeapp/pages/platform/platform.json'),
-        productListsRes:$resource('./yeapp/pages/shop/shop.json'),
-        productDetailsRes:$resource('./yeapp/pages/productDetail/productDetail.json'),
-        userRes:$resource('./yeapp/pages/user/user.json')
+        shopListsRes: $resource('api/platform?type=platform'),
+        productListsRes:$resource('api/shop.json'),
+        productDetailsRes:$resource('api/productDetail.json'),
+        userRes:$resource('api/user.json')
     };
 
     return factory;

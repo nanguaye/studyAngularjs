@@ -11,8 +11,18 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
                 }
             },
             resolve: {
-                shopLists: function (resourcePool) {
-                    return resourcePool.shopListsRes.get({})
+                shopLists: function ($http) {
+                  return  $http({
+                        url:'http://192.168.144.211:1030/api/platform',
+                        method:'GET',
+                        params:{
+                            'type':'platform'
+                        }
+                    }).success(function(data,header,config,status){
+                        
+                    }).error(function(data,header,config,status){
+                    });
+                    // return resourcePool.shopListsRes.get({})
                 }
             }
 
@@ -238,34 +248,14 @@ myApp.service('alertService', function ($rootScope, $compile,$timeout) {
  */
 myApp.factory('resourcePool', function ($resource, $http) {
     var factory = {
-        shopListsRes: $resource('./yeapp/pages/platform/platform.json'),
-        productListsRes:$resource('./yeapp/pages/shop/shop.json'),
-        productDetailsRes:$resource('./yeapp/pages/productDetail/productDetail.json'),
-        userRes:$resource('./yeapp/pages/user/user.json')
+        shopListsRes: $resource('api/platform?type=platform'),
+        productListsRes:$resource('api/shop.json'),
+        productDetailsRes:$resource('api/productDetail.json'),
+        userRes:$resource('api/user.json')
     };
 
     return factory;
 });
-"use strict";
-myApp.controller('platformCtrl',['$scope','shopLists','$state','$http',function ($scope,shopLists,$state,$http) {
-     var vm=this;
-     vm.shopLists=shopLists.shopLists
-     //goShop 前往商铺页面
-     vm.goShop=function (shopList) {
-          $state.go('platform.shop',{shopId:shopList.shopId})
-     }
-     $http({
-          url:'http://192.168.146.43:1030/api',
-          method:'GET',
-          params:{
-               'type':'platform'
-          }
-     }).success(function(data,header,config,status){
-//响应成功
-     }).error(function(data,header,config,status){
-//处理响应失败
-     });
-}]);
 /**
  * Created by nangua on 16/4/29.
  */
@@ -273,6 +263,15 @@ myApp.controller('loginCtrl',function () {
     
 });
 
+"use strict";
+myApp.controller('platformCtrl',['$scope','shopLists','$state','$http',function ($scope,shopLists,$state,$http) {
+     var vm=this;
+     vm.shopLists=shopLists.data.shopLists
+     //goShop 前往商铺页面
+     vm.goShop=function (shopList) {
+          $state.go('platform.shop',{shopId:shopList.shopId})
+     }
+}]);
 /**
  * Created by nangua on 16/4/28.
  */
