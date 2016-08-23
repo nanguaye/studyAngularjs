@@ -12,9 +12,8 @@ var path = require('path')
 var url = require('url')
 // 中间件 代理 将/api开头的请求代理到proxyOptions上去。
 var proxy = require('proxy-middleware');
-var proxyOptions = url.parse('http://192.168.144.211:8088/');
+var proxyOptions = url.parse('http://192.168.144.71:8088/');
 proxyOptions.route = '/api';
-console.log('proxy',proxy)
 
 // 编译less
 gulp.task('test-less', function () {

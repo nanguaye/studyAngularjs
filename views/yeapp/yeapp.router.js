@@ -12,7 +12,7 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
             resolve: {
                 shopLists: function ($http) {
                   return  $http({
-                        url:'http://192.168.144.211:1030/api/platform',
+                        url:' http://192.168.144.71:1030/api/platform',
                         method:'GET',
                         params:{
                             'type':'platform'

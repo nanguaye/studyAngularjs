@@ -13,7 +13,7 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
             resolve: {
                 shopLists: function ($http) {
                   return  $http({
-                        url:'http://192.168.144.211:1030/api/platform',
+                        url:' http://192.168.144.71:1030/api/platform',
                         method:'GET',
                         params:{
                             'type':'platform'
@@ -294,6 +294,12 @@ myApp.controller('detailCtrl', ['resourcePool', '$stateParams', 'productDetails'
     };
 }]);
 /**
+ * Created by nangua on 16/4/29.
+ */
+myApp.controller('userCtrl',['userInf','$scope',function (userInf,$scope) {
+     console.log('+++',userInf)
+}]);
+/**
  * Created by nangua on 16/4/25.
  */
 myApp.controller('shopCtrl', ['$scope', 'productLists', 'alertService', '$state', '$timeout', function ($scope, productLists, alertService, $state, $timeout) {
@@ -411,10 +417,4 @@ myApp.controller('shopCtrl', ['$scope', 'productLists', 'alertService', '$state'
         }
 
     }
-}]);
-/**
- * Created by nangua on 16/4/29.
- */
-myApp.controller('userCtrl',['userInf','$scope',function (userInf,$scope) {
-     console.log('+++',userInf)
 }]);

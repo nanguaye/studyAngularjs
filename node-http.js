@@ -1,15 +1,17 @@
 /**
  * Created by nangua on 16/8/18.
  */
-
-var http = require('http')
-var url = require('url')
+// todo 引入模块
+var http = require('http');
+var url = require('url');
+// todo 模拟数据
 // 引入首页的json
 var platformJSON = require('./views/api/platform.json')
 // 模拟一个数据对象
 var _data = {platform: platformJSON}
 
 
+// todo 创建一个服务
 http.createServer(function (request, response) {
     var _url = url.parse(request.url, true)
     var _paramName = _url.query['type']
@@ -17,7 +19,7 @@ http.createServer(function (request, response) {
     // 当参数type 参数存在的时候.
     if (_paramName) {
         response.writeHead(200, {'Content-Type': 'text/plain;charset=utf-8'});
-        console.log('type参数:',_paramName)
+        console.log('type参数:', _paramName)
         response.write(JSON.stringify(_data[_paramName]))
         console.log('success!!')
 
